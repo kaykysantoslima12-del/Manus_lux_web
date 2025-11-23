@@ -8,53 +8,61 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        neon: {
-          cyan: "#00E0FF",
-          magenta: "#E91E63",
-          orange: "#FF8C00",
-          green: "#00D9A3",
-          purple: "#8B5CF6",
-          pink: "#EC4899",
-          blue: "#3B82F6",
-          dark: "#0A0E27",
-          darker: "#05070F",
+        glass: {
+          blue: "#007AFF",
+          purple: "#AF52DE",
+          orange: "#FF9500",
+          cyan: "#5AC8FA",
+          pink: "#FF2D55",
+          green: "#34C759",
+          indigo: "#5856D6",
+          teal: "#30B0C7",
+        },
+        bg: {
+          light: "#F2F2F7",
+          dark: "#1C1C1E",
+          gradient: {
+            start: "#E5E5EA",
+            end: "#F2F2F7",
+          },
+        },
+        text: {
+          primary: "#000000",
+          secondary: "#8E8E93",
+          tertiary: "#C7C7CC",
+          inverse: "#FFFFFF",
         },
       },
       backgroundImage: {
-        'gradient-neon': 'linear-gradient(135deg, #00E0FF 0%, #8B5CF6 50%, #EC4899 100%)',
-        'gradient-cyan-purple': 'linear-gradient(135deg, #00E0FF 0%, #8B5CF6 100%)',
-        'gradient-purple-pink': 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)',
-        'gradient-orange-red': 'linear-gradient(135deg, #FF8C00 0%, #EF4444 100%)',
-        'gradient-cyan-green': 'linear-gradient(135deg, #00E0FF 0%, #00D9A3 100%)',
+        'gradient-glass': 'linear-gradient(135deg, #E8F0FE 0%, #F3E8FF 50%, #FCE7F3 100%)',
+        'gradient-glass-dark': 'linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%)',
+        'gradient-blue': 'linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%)',
+        'gradient-purple': 'linear-gradient(135deg, #AF52DE 0%, #5856D6 100%)',
+        'gradient-orange': 'linear-gradient(135deg, #FF9500 0%, #FF2D55 100%)',
+        'gradient-cyan': 'linear-gradient(135deg, #5AC8FA 0%, #30B0C7 100%)',
+        'gradient-pink': 'linear-gradient(135deg, #FF2D55 0%, #AF52DE 100%)',
       },
       boxShadow: {
-        "glow-cyan": "0 0 20px rgba(0, 224, 255, 0.6), 0 0 40px rgba(0, 224, 255, 0.3)",
-        "glow-magenta": "0 0 20px rgba(233, 30, 99, 0.6), 0 0 40px rgba(233, 30, 99, 0.3)",
-        "glow-orange": "0 0 20px rgba(255, 140, 0, 0.6), 0 0 40px rgba(255, 140, 0, 0.3)",
-        "glow-green": "0 0 20px rgba(0, 217, 163, 0.6), 0 0 40px rgba(0, 217, 163, 0.3)",
-        "glow-purple": "0 0 20px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.3)",
-        "glow-pink": "0 0 20px rgba(236, 72, 153, 0.6), 0 0 40px rgba(236, 72, 153, 0.3)",
-        "glow-cyan-lg": "0 0 30px rgba(0, 224, 255, 0.8), 0 0 60px rgba(0, 224, 255, 0.4)",
-        "glow-magenta-lg": "0 0 30px rgba(233, 30, 99, 0.8), 0 0 60px rgba(233, 30, 99, 0.4)",
-        "glow-orange-lg": "0 0 30px rgba(255, 140, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.4)",
-        "glow-green-lg": "0 0 30px rgba(0, 217, 163, 0.8), 0 0 60px rgba(0, 217, 163, 0.4)",
-        "glow-purple-lg": "0 0 30px rgba(139, 92, 246, 0.8), 0 0 60px rgba(139, 92, 246, 0.4)",
-        "glow-pink-lg": "0 0 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(236, 72, 153, 0.4)",
+        "glass": "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
+        "glass-lg": "0 12px 48px 0 rgba(31, 38, 135, 0.2)",
+        "glass-hover": "0 16px 64px 0 rgba(31, 38, 135, 0.25)",
+        "inner-glass": "inset 0 1px 0 0 rgba(255, 255, 255, 0.5)",
       },
       backdropBlur: {
-        glass: "15px",
+        glass: "20px",
+        "glass-lg": "30px",
+      },
+      borderRadius: {
+        "glass": "20px",
+        "glass-lg": "24px",
       },
       animation: {
-        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         "fade-in": "fade-in 0.6s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
+        "slide-up": "slide-up 0.5s ease-out",
         "float": "float 3s ease-in-out infinite",
       },
       keyframes: {
-        "glow-pulse": {
-          "0%, 100%": { opacity: "0.5" },
-          "50%": { opacity: "1" },
-        },
         "fade-in": {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
@@ -62,6 +70,10 @@ module.exports = {
         "scale-in": {
           "0%": { transform: "scale(0.95)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        "slide-up": {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0px)" },
