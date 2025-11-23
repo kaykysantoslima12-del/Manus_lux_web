@@ -55,7 +55,7 @@ export default function HomePage() {
     router.push(path);
   };
 
-  const userName = user?.displayName || user?.email?.split("@")[0] || "kayky";
+  const userName = user?.email?.split("@")[0] || "kayky";
 
   return (
     <div className="min-h-screen bg-gradient-glass">
