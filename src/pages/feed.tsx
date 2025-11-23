@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { NeonText } from "@/components/NeonComponents";
+import { GlassText } from "@/components/GlassComponents";
 import { FiArrowLeft, FiHeart, FiMessageCircle, FiShare2, FiUser, FiMoreVertical } from "react-icons/fi";
 
 // Mock Data for LUX Feed
 const mockFeed = [
   {
     id: 1,
-    user: "NeonArtist",
+    user: "GlassArtist",
     prompt: "A cyberpunk city street at night, heavy rain, neon signs, cinematic lighting.",
     assetType: "Video",
     assetUrl: "/mock-video.mp4", // Placeholder
@@ -40,15 +40,15 @@ const FeedItem = ({ item }: { item: typeof mockFeed[0] }) => {
   };
 
   return (
-    <div className="relative w-full h-screen snap-start bg-neon-darker">
+    <div className="relative w-full h-screen snap-start bg-glass-darker">
       {/* Asset Display (Full Screen) */}
       <div className="absolute inset-0 flex items-center justify-center">
         {item.assetType === "Video" ? (
-          <div className="text-neon-cyan text-3xl">
+          <div className="text-glass-cyan text-3xl">
             [Video Player Placeholder]
           </div>
         ) : (
-          <div className="text-neon-magenta text-3xl">
+          <div className="text-glass-magenta text-3xl">
             [Image Placeholder]
           </div>
         )}
@@ -62,33 +62,33 @@ const FeedItem = ({ item }: { item: typeof mockFeed[0] }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleLike}
-            className="flex flex-col items-center text-white"
+            className="flex flex-col items-center text-glass"
           >
-            <FiHeart className={`text-3xl ${isLiked ? "text-neon-red" : "text-white/80"}`} />
+            <FiHeart className={`text-3xl ${isLiked ? "text-glass-red" : "text-glass/80"}`} />
             <span className="text-sm mt-1">{likesCount.toLocaleString()}</span>
           </motion.button>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center text-white/80">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center text-glass/80">
             <FiMessageCircle className="text-3xl" />
             <span className="text-sm mt-1">{item.comments}</span>
           </motion.button>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center text-white/80">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center text-glass/80">
             <FiShare2 className="text-3xl" />
             <span className="text-sm mt-1">Share</span>
           </motion.button>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center text-white/80">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center text-glass/80">
             <FiMoreVertical className="text-3xl" />
           </motion.button>
         </div>
 
         {/* Bottom Left - User Info and Caption */}
         <div className="flex items-center gap-3 mb-4">
-          <FiUser className="text-neon-green text-3xl border border-neon-green rounded-full p-1" />
-          <NeonText size="lg" glowColor="green">@{item.user}</NeonText>
+          <FiUser className="text-glass-green text-3xl border border-glass-green rounded-full p-1" />
+          <GlassText size="lg" variant="gradient-blue">@{item.user}</GlassText>
         </div>
-        <p className="text-white text-base mb-2">{item.prompt}</p>
+        <p className="text-glass text-base mb-2">{item.prompt}</p>
         <div className="flex flex-wrap gap-2">
           {item.hashtags.map((tag) => (
-            <span key={tag} className="text-neon-cyan/80 text-sm hover:text-neon-cyan cursor-pointer">
+            <span key={tag} className="text-glass-cyan/80 text-sm hover:text-glass-cyan cursor-pointer">
               {tag}
             </span>
           ))}
@@ -108,7 +108,7 @@ export default function FeedPage() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => router.push("/")}
-        className="absolute top-4 left-4 sm:top-8 sm:left-8 flex items-center gap-2 text-neon-cyan hover:text-white transition-colors z-50"
+        className="absolute top-4 left-4 sm:top-8 sm:left-8 flex items-center gap-2 text-glass-cyan hover:text-glass transition-colors z-50"
       >
         <FiArrowLeft />
         Home

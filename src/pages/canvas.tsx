@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { NeonText, NeonButton, NeonInput, NeonCard } from "@/components/NeonComponents";
+import { GlassText, GlassButton, GlassInput, GlassCard } from "@/components/GlassComponents";
 import { FiArrowLeft, FiSend, FiImage, FiVideo, FiMic, FiSave, FiSettings, FiMaximize, FiMinusCircle, FiZap, FiEdit3 } from "react-icons/fi";
 
 export default function CanvasPage() {
@@ -69,12 +69,12 @@ export default function CanvasPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neon-dark via-neon-darker to-neon-dark text-white p-4 sm:p-8">
+    <div className="min-h-screen bg-gradient-glass text-glass p-4 sm:p-8">
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => router.push("/")}
-        className="absolute top-4 left-4 sm:top-8 sm:left-8 flex items-center gap-2 text-neon-cyan hover:text-white transition-colors z-10"
+        className="absolute top-4 left-4 sm:top-8 sm:left-8 flex items-center gap-2 text-glass-cyan hover:text-glass transition-colors z-10"
       >
         <FiArrowLeft />
         Home
@@ -87,36 +87,36 @@ export default function CanvasPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <NeonText size="2xl" glowColor="magenta" className="mb-2">
+          <GlassText size="2xl" variant="gradient-purple" className="mb-2">
             Canvas (Editor IA)
-          </NeonText>
-          <p className="text-white/70 text-lg">
+          </GlassText>
+          <p className="text-glass/70 text-lg">
             Crie, edite e gere ativos digitais com a inteligência artificial LUX.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Coluna 1: Editor/Prompt */}
-          <NeonCard glowColor="magenta" className="lg:col-span-1 p-6 h-full">
+          <GlassCard variant="gradient-purple" className="lg:col-span-1 p-6 h-full">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
               <FiEdit3 /> Prompt & Settings
             </h3>
             <div className="space-y-4">
-              <NeonInput
+              <GlassInput
                 placeholder={`Descreva o que você quer criar (${assetType.toLowerCase()})`}
-                glowColor="magenta"
+                variant="gradient-purple"
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
                 disabled={isLoading}
               />
               {/* Negative Prompt */}
               <div className="pt-2">
-                <label className="block text-white/80 text-sm font-semibold mb-2 flex items-center gap-1">
-                  <FiMinusCircle className="text-neon-orange" /> Negative Prompt (O que evitar)
+                <label className="block text-glass/80 text-sm font-semibold mb-2 flex items-center gap-1">
+                  <FiMinusCircle className="text-glass-orange" /> Negative Prompt (O que evitar)
                 </label>
-                <NeonInput
+                <GlassInput
                   placeholder="Ex: Sem mãos feias, sem desfoque, sem marca d'água"
-                  glowColor="orange"
+                  variant="gradient-orange"
                   value={negativePrompt}
                   onChange={(e) => setNegativePrompt(e.target.value)}
                   disabled={isLoading}
@@ -124,40 +124,40 @@ export default function CanvasPage() {
               </div>
               {/* Seleção de Tipo de Ativo */}
               <div className="flex gap-2">
-                <NeonButton
-                  glowColor={assetType === "Image" ? "cyan" : "magenta"}
+                <GlassButton
+                  variant={assetType === "Image" ? "cyan" : "magenta"}
                   className="flex-1 flex items-center justify-center gap-2"
                   onClick={() => setAssetType("Image")}
                   disabled={isLoading}
                 >
                   <FiImage /> Imagem
-                </NeonButton>
-                <NeonButton
-                  glowColor={assetType === "Video" ? "cyan" : "magenta"}
+                </GlassButton>
+                <GlassButton
+                  variant={assetType === "Video" ? "cyan" : "magenta"}
                   className="flex-1 flex items-center justify-center gap-2"
                   onClick={() => setAssetType("Video")}
                   disabled={isLoading}
                 >
                   <FiVideo /> Vídeo
-                </NeonButton>
-                <NeonButton
-                  glowColor={assetType === "Voice" ? "cyan" : "magenta"}
+                </GlassButton>
+                <GlassButton
+                  variant={assetType === "Voice" ? "cyan" : "magenta"}
                   className="flex-1 flex items-center justify-center gap-2"
                   onClick={() => setAssetType("Voice")}
                   disabled={isLoading}
                 >
                   <FiMic /> Voz
-                </NeonButton>
+                </GlassButton>
               </div>
               {/* Configuração de Estilo */}
               <div className="pt-2">
-                <label className="block text-white/80 text-sm font-semibold mb-2 flex items-center gap-1">
-                  <FiSettings className="text-neon-purple" /> Estilo Artístico
+                <label className="block text-glass/80 text-sm font-semibold mb-2 flex items-center gap-1">
+                  <FiSettings className="text-glass-purple" /> Estilo Artístico
                 </label>
                 <select
                   value={style}
                   onChange={(e) => setStyle(e.target.value)}
-                  className="w-full p-2 rounded-lg bg-neon-darker border border-neon-purple/50 text-white focus:ring-2 focus:ring-neon-purple focus:border-neon-purple transition-all"
+                  className="w-full p-2 rounded-lg bg-glass-darker border border-glass-purple/50 text-glass focus:ring-2 focus:ring-glass-purple focus:border-glass-purple transition-all"
                   disabled={isLoading}
                 >
                   {styles.map((s) => (
@@ -169,13 +169,13 @@ export default function CanvasPage() {
               </div>
               {/* Configuração de Aspect Ratio */}
               <div className="pt-2">
-                <label className="block text-white/80 text-sm font-semibold mb-2 flex items-center gap-1">
-                  <FiMaximize className="text-neon-cyan" /> Aspect Ratio
+                <label className="block text-glass/80 text-sm font-semibold mb-2 flex items-center gap-1">
+                  <FiMaximize className="text-glass-cyan" /> Aspect Ratio
                 </label>
                 <select
                   value={aspectRatio}
                   onChange={(e) => setAspectRatio(e.target.value)}
-                  className="w-full p-2 rounded-lg bg-neon-darker border border-neon-purple/50 text-white focus:ring-2 focus:ring-neon-cyan focus:border-neon-cyan transition-all"
+                  className="w-full p-2 rounded-lg bg-glass-darker border border-glass-purple/50 text-glass focus:ring-2 focus:ring-glass-cyan focus:border-glass-cyan transition-all"
                   disabled={isLoading}
                 >
                   {aspectRatios.map((ratio) => (
@@ -187,30 +187,30 @@ export default function CanvasPage() {
               </div>
               {/* Modo de Geração */}
               <div className="pt-2 flex gap-4 items-center">
-                <label className="block text-white/80 text-sm font-semibold flex items-center gap-1">
-                  <FiZap className="text-neon-yellow" /> Modo de Geração:
+                <label className="block text-glass/80 text-sm font-semibold flex items-center gap-1">
+                  <FiZap className="text-glass-yellow" /> Modo de Geração:
                 </label>
                 <div className="flex gap-2">
-                  <NeonButton
-                    glowColor={generationMode === "Fast" ? "green" : "cyan"}
+                  <GlassButton
+                    variant={generationMode === "Fast" ? "green" : "cyan"}
                     className="text-sm px-3 py-1"
                     onClick={() => setGenerationMode("Fast")}
                     disabled={isLoading}
                   >
                     Fast (10 Coins)
-                  </NeonButton>
-                  <NeonButton
-                    glowColor={generationMode === "Quality" ? "orange" : "cyan"}
+                  </GlassButton>
+                  <GlassButton
+                    variant={generationMode === "Quality" ? "orange" : "cyan"}
                     className="text-sm px-3 py-1"
                     onClick={() => setGenerationMode("Quality")}
                     disabled={isLoading}
                   >
                     Quality (50 Coins)
-                  </NeonButton>
+                  </GlassButton>
                 </div>
               </div>
-              <NeonButton
-                glowColor="magenta"
+              <GlassButton
+                variant="gradient-purple"
                 className="w-full flex items-center justify-center gap-2"
                 onClick={handleGenerate}
                 disabled={isLoading || !prompt}
@@ -226,44 +226,44 @@ export default function CanvasPage() {
                     <FiSend /> Gerar Ativo (Custa 5 COINS)
                   </>
                 )}
-              </NeonButton>
+              </GlassButton>
             </div>
-          </NeonCard>
+          </GlassCard>
 
           {/* Coluna 2: Visualização/Resultado */}
-          <NeonCard glowColor="cyan" className="lg:col-span-2 p-6">
+          <GlassCard variant="gradient-blue" className="lg:col-span-2 p-6">
             <h3 className="text-xl font-bold mb-4 flex items-center justify-between">
               <span className="flex items-center gap-2">
                 <FiSave /> Resultado da Geração ({assetType})
               </span>
-              <span className="text-sm text-white/50">Aspect Ratio: {aspectRatio}</span>
+              <span className="text-sm text-glass/50">Aspect Ratio: {aspectRatio}</span>
             </h3>
-            <div className={`h-96 bg-neon-darker/50 border border-neon-cyan/20 rounded-lg flex items-center justify-center`}>
+            <div className={`h-96 bg-glass-darker/50 border border-glass-cyan/20 rounded-lg flex items-center justify-center`}>
               {isLoading && (
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
-                  className="text-neon-cyan text-xl"
+                  className="text-glass-cyan text-xl"
                 >
                   Gerando {assetType} LUX...
                 </motion.div>
               )}
               {result && (
                 <div className="text-center p-4">
-                  <p className="text-neon-green font-bold mb-4">Geração Concluída!</p>
-                  <p className="text-white/80">{result}</p>
-                  {assetType === "Video" && <p className="text-neon-pink mt-2">Simulação de Player de Vídeo</p>}
-                  {assetType === "Voice" && <p className="text-neon-pink mt-2">Simulação de Player de Áudio</p>}
-                  <NeonButton glowColor="green" className="mt-4">
+                  <p className="text-glass-green font-bold mb-4">Geração Concluída!</p>
+                  <p className="text-glass/80">{result}</p>
+                  {assetType === "Video" && <p className="text-glass-pink mt-2">Simulação de Player de Vídeo</p>}
+                  {assetType === "Voice" && <p className="text-glass-pink mt-2">Simulação de Player de Áudio</p>}
+                  <GlassButton variant="gradient-blue" className="mt-4">
                     Baixar / Publicar
-                  </NeonButton>
+                  </GlassButton>
                 </div>
               )}
               {!isLoading && !result && (
-                <p className="text-white/50">Seu ativo gerado aparecerá aqui.</p>
+                <p className="text-glass/50">Seu ativo gerado aparecerá aqui.</p>
               )}
             </div>
-          </NeonCard>
+          </GlassCard>
         </div>
       </div>
     </div>

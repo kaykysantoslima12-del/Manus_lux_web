@@ -162,7 +162,7 @@ export default function HomePage() {
 
           {/* Marketplace - Larger */}
           <GlassCard
-            variant="orange"
+            variant="gradient-orange"
             className="cursor-pointer hover:scale-[1.02] transition-transform col-span-1 row-span-1"
             onClick={() => handleFeatureClick("Marketplace")}
           >
@@ -181,7 +181,7 @@ export default function HomePage() {
 
           {/* Wallet */}
           <GlassCard
-            variant="cyan"
+            variant="gradient-blue"
             className="cursor-pointer hover:scale-[1.02] transition-transform"
             onClick={() => handleFeatureClick("Wallet")}
           >
@@ -235,10 +235,10 @@ export default function HomePage() {
               <GlassButton variant="purple" size="sm" onClick={() => router.push("/feed")}>
                 Feed
               </GlassButton>
-              <GlassButton variant="orange" size="sm" onClick={() => router.push("/marketplace")}>
+              <GlassButton variant="gradient-orange" size="sm" onClick={() => router.push("/marketplace")}>
                 Comprar
               </GlassButton>
-              <GlassButton variant="cyan" size="sm" onClick={() => router.push("/wallet")}>
+              <GlassButton variant="gradient-blue" size="sm" onClick={() => router.push("/wallet")}>
                 Carteira
               </GlassButton>
             </div>
