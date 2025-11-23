@@ -27,8 +27,8 @@ export const NeonGlassCard: React.FC<NeonGlassCardProps> = ({
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
       className={clsx(
-        "backdrop-blur-glass border rounded-[20px] bg-white/5 border-2",
-        "transition-all duration-300 hover:bg-white/8",
+        "backdrop-blur-glass border rounded-[20px] bg-white/5 border-3",
+        "transition-all duration-300 hover:bg-white/10 hover:scale-[1.02]",
         glowClasses[glowColor],
         className
       )}
@@ -72,7 +72,7 @@ export const NeonButton: React.FC<NeonButtonProps> = ({
       disabled={disabled}
       onClick={onClick}
       className={clsx(
-        "px-6 py-3 rounded-lg font-bold transition-all duration-300",
+        "px-6 py-3 rounded-lg font-bold transition-all duration-300 hover:brightness-110",
         variant === "solid"
           ? clsx(`bg-gradient-to-r ${color.bg}`, color.text, color.glow)
           : clsx(`border-2 border-neon-${glowColor}`, `text-neon-${glowColor}`),
@@ -126,7 +126,7 @@ export const NeonText: React.FC<NeonTextProps> = ({
         className
       )}
       style={{
-        textShadow: `0 0 20px rgba(${
+        textShadow: `0 0 10px rgba(${
           glowColor === "cyan"
             ? "0, 224, 255"
             : glowColor === "magenta"
@@ -134,7 +134,7 @@ export const NeonText: React.FC<NeonTextProps> = ({
             : glowColor === "orange"
             ? "255, 140, 0"
             : "0, 217, 163"
-        }, 0.5), 0 0 40px rgba(${
+        }, 1), 0 0 20px rgba(${
           glowColor === "cyan"
             ? "0, 224, 255"
             : glowColor === "magenta"
@@ -142,7 +142,24 @@ export const NeonText: React.FC<NeonTextProps> = ({
             : glowColor === "orange"
             ? "255, 140, 0"
             : "0, 217, 163"
-        }, 0.3)`,
+        }, 0.8), 0 0 40px rgba(${
+          glowColor === "cyan"
+            ? "0, 224, 255"
+            : glowColor === "magenta"
+            ? "233, 30, 99"
+            : glowColor === "orange"
+            ? "255, 140, 0"
+            : "0, 217, 163"
+        }, 0.6), 0 0 80px rgba(${
+          glowColor === "cyan"
+            ? "0, 224, 255"
+            : glowColor === "magenta"
+            ? "233, 30, 99"
+            : glowColor === "orange"
+            ? "255, 140, 0"
+            : "0, 217, 163"
+        }, 0.4)`,
+        filter: "brightness(1.3)",
       }}
     >
       {children}
