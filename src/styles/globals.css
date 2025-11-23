@@ -13,9 +13,9 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #E8F0FE 0%, #F3E8FF 50%, #FCE7F3 100%);
+  background: linear-gradient(135deg, #1E3A8A 0%, #7C3AED 50%, #EC4899 100%);
   background-attachment: fixed;
-  color: #000000;
+  color: #FFFFFF;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

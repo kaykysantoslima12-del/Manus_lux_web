@@ -34,7 +34,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'gradient-glass': 'linear-gradient(135deg, #E8F0FE 0%, #F3E8FF 50%, #FCE7F3 100%)',
+        'gradient-glass': 'linear-gradient(135deg, #1E3A8A 0%, #7C3AED 50%, #EC4899 100%)',
         'gradient-glass-dark': 'linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%)',
         'gradient-blue': 'linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%)',
         'gradient-purple': 'linear-gradient(135deg, #AF52DE 0%, #5856D6 100%)',
