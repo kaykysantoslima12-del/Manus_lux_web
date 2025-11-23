@@ -30,7 +30,7 @@ export default function WalletPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <GlassText size="2xl" variant="gradient-blue" className="mb-4">
+          <GlassText size="2xl" variant="blue" className="mb-4">
             Wallet (Carteira)
           </GlassText>
           <p className="text-glass/70 text-lg">
@@ -38,15 +38,15 @@ export default function WalletPage() {
           </p>
         </motion.div>
 
-        <GlassCard variant="gradient-blue" className="p-6 mb-8 text-center">
+        <GlassCard variant="blue" className="p-6 mb-8 text-center">
           <FiDollarSign className="text-glass-green text-4xl mx-auto mb-4" />
           <p className="text-glass/70 text-xl">Current Balance</p>
-          <GlassText size="2xl" variant="gradient-blue">
+          <GlassText size="2xl" variant="blue">
             {user?.manusCoins || 0} COINS
           </GlassText>
         </GlassCard>
 
-        <GlassCard variant="gradient-blue" className="p-6">
+        <GlassCard variant="blue" className="p-6">
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
             <FiCreditCard /> Transaction History
           </h3>

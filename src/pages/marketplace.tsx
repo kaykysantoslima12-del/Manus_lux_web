@@ -98,7 +98,7 @@ export default function MarketplacePage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <GlassText size="2xl" variant="gradient-orange" className="mb-2">
+          <GlassText size="2xl" variant="orange" className="mb-2">
             Marketplace LUX
           </GlassText>
           <p className="text-glass/70 text-lg">
@@ -110,11 +110,11 @@ export default function MarketplacePage() {
         <div className="mb-8 flex gap-4">
           <GlassInput
             placeholder="Search assets (images, videos, voices...)"
-            variant="gradient-orange"
+            variant="orange"
             className="flex-1"
 
           />
-          <GlassButton variant="gradient-orange" className="flex-shrink-0">
+          <GlassButton variant="orange" className="flex-shrink-0">
             Filter
           </GlassButton>
         </div>
@@ -143,13 +143,13 @@ export default function MarketplacePage() {
 
           {/* Modal/Visualização do Pix */}
           {pixData && (
-            <GlassCard variant="gradient-blue" className="p-6 mb-6 text-center">
+            <GlassCard variant="blue" className="p-6 mb-6 text-center">
               <h3 className="text-2xl font-bold mb-4">Pagamento Pix Gerado!</h3>
               <p className="text-glass/80 mb-4">Escaneie o QR Code abaixo para pagar {pixData.amount.toLocaleString()} ManusCoins.</p>
               <div className="flex justify-center mb-4">
                 <img src={`data:image/jpeg;base64,${pixData.qrCode}`} alt="QR Code Pix" className="w-48 h-48 border border-glass-green/50 p-2" />
               </div>
-              <GlassButton variant="gradient-orange" onClick={() => setPixData(null)}>
+              <GlassButton variant="orange" onClick={() => setPixData(null)}>
                 Fechar
               </GlassButton>
             </GlassCard>
@@ -198,7 +198,7 @@ export default function MarketplacePage() {
                   <div className="flex items-center text-glass-green font-bold text-lg">
                     <FiDollarSign /> {asset.price} COINS
                   </div>
-                  <GlassButton variant="gradient-blue">
+                  <GlassButton variant="blue">
                     Comprar
                   </GlassButton>
                 </div>

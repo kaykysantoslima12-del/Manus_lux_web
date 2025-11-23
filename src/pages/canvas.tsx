@@ -87,7 +87,7 @@ export default function CanvasPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <GlassText size="2xl" variant="gradient-purple" className="mb-2">
+          <GlassText size="2xl" variant="purple" className="mb-2">
             Canvas (Editor IA)
           </GlassText>
           <p className="text-glass/70 text-lg">
@@ -97,14 +97,14 @@ export default function CanvasPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Coluna 1: Editor/Prompt */}
-          <GlassCard variant="gradient-purple" className="lg:col-span-1 p-6 h-full">
+          <GlassCard variant="purple" className="lg:col-span-1 p-6 h-full">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
               <FiEdit3 /> Prompt & Settings
             </h3>
             <div className="space-y-4">
               <GlassInput
                 placeholder={`Descreva o que você quer criar (${assetType.toLowerCase()})`}
-                variant="gradient-purple"
+                variant="purple"
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
                 disabled={isLoading}
@@ -116,7 +116,7 @@ export default function CanvasPage() {
                 </label>
                 <GlassInput
                   placeholder="Ex: Sem mãos feias, sem desfoque, sem marca d'água"
-                  variant="gradient-orange"
+                  variant="orange"
                   value={negativePrompt}
                   onChange={(e) => setNegativePrompt(e.target.value)}
                   disabled={isLoading}
@@ -210,7 +210,7 @@ export default function CanvasPage() {
                 </div>
               </div>
               <GlassButton
-                variant="gradient-purple"
+                variant="purple"
                 className="w-full flex items-center justify-center gap-2"
                 onClick={handleGenerate}
                 disabled={isLoading || !prompt}
@@ -231,7 +231,7 @@ export default function CanvasPage() {
           </GlassCard>
 
           {/* Coluna 2: Visualização/Resultado */}
-          <GlassCard variant="gradient-blue" className="lg:col-span-2 p-6">
+          <GlassCard variant="blue" className="lg:col-span-2 p-6">
             <h3 className="text-xl font-bold mb-4 flex items-center justify-between">
               <span className="flex items-center gap-2">
                 <FiSave /> Resultado da Geração ({assetType})
@@ -254,7 +254,7 @@ export default function CanvasPage() {
                   <p className="text-glass/80">{result}</p>
                   {assetType === "Video" && <p className="text-glass-pink mt-2">Simulação de Player de Vídeo</p>}
                   {assetType === "Voice" && <p className="text-glass-pink mt-2">Simulação de Player de Áudio</p>}
-                  <GlassButton variant="gradient-blue" className="mt-4">
+                  <GlassButton variant="blue" className="mt-4">
                     Baixar / Publicar
                   </GlassButton>
                 </div>

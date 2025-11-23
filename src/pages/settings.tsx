@@ -35,7 +35,7 @@ export default function SettingsPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <GlassText size="2xl" variant="gradient-purple" className="mb-2">
+          <GlassText size="2xl" variant="purple" className="mb-2">
             Settings (Configurações)
           </GlassText>
           <p className="text-glass/70 text-lg">
@@ -44,7 +44,7 @@ export default function SettingsPage() {
         </motion.div>
 
         <div className="space-y-6">
-          <GlassCard variant="gradient-blue" className="p-6">
+          <GlassCard variant="blue" className="p-6">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-glass-cyan">
               <FiUser /> Perfil
             </h3>
@@ -59,12 +59,12 @@ export default function SettingsPage() {
             </p>
           </GlassCard>
 
-          <GlassCard variant="gradient-purple" className="p-6">
+          <GlassCard variant="purple" className="p-6">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-glass-pink">
               <FiSettings /> Opções
             </h3>
             <GlassButton
-              variant="gradient-orange"
+              variant="orange"
               className="w-full flex items-center justify-center gap-2 mt-4"
               onClick={handleLogout}
             >

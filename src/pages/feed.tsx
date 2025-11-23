@@ -83,7 +83,7 @@ const FeedItem = ({ item }: { item: typeof mockFeed[0] }) => {
         {/* Bottom Left - User Info and Caption */}
         <div className="flex items-center gap-3 mb-4">
           <FiUser className="text-glass-green text-3xl border border-glass-green rounded-full p-1" />
-          <GlassText size="lg" variant="gradient-blue">@{item.user}</GlassText>
+          <GlassText size="lg" variant="blue">@{item.user}</GlassText>
         </div>
         <p className="text-glass text-base mb-2">{item.prompt}</p>
         <div className="flex flex-wrap gap-2">

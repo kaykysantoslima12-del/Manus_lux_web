@@ -69,7 +69,7 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               className="glass-card px-6 py-3 rounded-2xl"
             >
-              <GlassText variant="gradient-blue" size="lg" weight="bold">
+              <GlassText variant="blue" size="lg" weight="bold">
                 MANUS DESAGNI LUX
               </GlassText>
             </motion.div>
@@ -162,7 +162,7 @@ export default function HomePage() {
 
           {/* Marketplace - Larger */}
           <GlassCard
-            variant="gradient-orange"
+            variant="orange"
             className="cursor-pointer hover:scale-[1.02] transition-transform col-span-1 row-span-1"
             onClick={() => handleFeatureClick("Marketplace")}
           >
@@ -181,7 +181,7 @@ export default function HomePage() {
 
           {/* Wallet */}
           <GlassCard
-            variant="gradient-blue"
+            variant="blue"
             className="cursor-pointer hover:scale-[1.02] transition-transform"
             onClick={() => handleFeatureClick("Wallet")}
           >
@@ -235,10 +235,10 @@ export default function HomePage() {
               <GlassButton variant="purple" size="sm" onClick={() => router.push("/feed")}>
                 Feed
               </GlassButton>
-              <GlassButton variant="gradient-orange" size="sm" onClick={() => router.push("/marketplace")}>
+              <GlassButton variant="orange" size="sm" onClick={() => router.push("/marketplace")}>
                 Comprar
               </GlassButton>
-              <GlassButton variant="gradient-blue" size="sm" onClick={() => router.push("/wallet")}>
+              <GlassButton variant="blue" size="sm" onClick={() => router.push("/wallet")}>
                 Carteira
               </GlassButton>
             </div>
