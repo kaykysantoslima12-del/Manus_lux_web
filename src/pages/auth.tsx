@@ -71,7 +71,7 @@ export default function AuthPage() {
               </div>
             </motion.div>
 
-            <GlassText variant="blue" size="2xl" weight="bold" className="block mb-2">
+            <GlassText variant="gradient-blue" size="2xl" weight="bold" className="block mb-2">
               MANUS DESAGNI
             </GlassText>
             <GlassText className="text-glass-secondary">

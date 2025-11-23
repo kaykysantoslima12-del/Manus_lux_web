@@ -69,7 +69,7 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               className="glass-card px-6 py-3 rounded-2xl"
             >
-              <GlassText variant="blue" size="lg" weight="bold">
+              <GlassText variant="gradient-blue" size="lg" weight="bold">
                 MANUS DESAGNI LUX
               </GlassText>
             </motion.div>
