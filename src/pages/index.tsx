@@ -122,7 +122,7 @@ export default function HomePage() {
           />
           <GlassStatCard
             title="Moedas"
-            value={user?.coins || 0}
+            value={user?.manusCoins || 0}
             icon={<FiDollarSign />}
             variant="purple"
           />
