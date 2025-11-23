@@ -12,8 +12,9 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Cores vibrantes intensas - Azul escuro, Roxo, Rosa */
 body {
-  background: linear-gradient(135deg, #1E3A8A 0%, #7C3AED 50%, #EC4899 100%);
+  background: linear-gradient(135deg, #1E3A8A 0%, #7C3AED 50%, #EC4899 100%) !important;
   background-attachment: fixed;
   color: #FFFFFF;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
